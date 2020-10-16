@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAutomation" verbose="1" data-provider-thread-count="15">
+
+    <test name="TestSuite">
+        <groups>
+            <run>
+                <include name="getAllUsers"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="ApiTesting.GetUsers"></class>
+        </classes>
+
+    </test>
+</suite>
