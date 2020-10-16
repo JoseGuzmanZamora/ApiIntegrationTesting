@@ -6,12 +6,13 @@
     <test name="TestSuite">
         <groups>
             <run>
-                <include name="getAllUsers"></include>
+                <include name="createUser"></include>
             </run>
         </groups>
 
         <classes>
             <class name="ApiTesting.GetUsers"></class>
+            <class name="ApiTesting.PostUsers"></class>
         </classes>
 
     </test>
