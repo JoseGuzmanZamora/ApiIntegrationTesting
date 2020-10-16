@@ -2,8 +2,7 @@ package ApiTesting;
 
 import apiTestingUtils.ApiRequests;
 import apiTestingUtils.User;
-import com.google.gson.Gson;
-import io.restassured.internal.mapping.GsonMapper;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
@@ -25,8 +24,7 @@ public class DeleteUsers {
     @DataProvider(name = "deleteEvenUsers", parallel = true)
     private Iterator<Object[]> deleteEvenUsers(){
         // Get user count
-        GetUsers userInformation = new GetUsers();
-        JSONArray users = userInformation.getAllUsers();
+        JSONArray users = GetUsers.getUsersInformation();
         ArrayList<User> actualUsers = User.fromJsonArray(users);
 
         // Iterate and add even numbers

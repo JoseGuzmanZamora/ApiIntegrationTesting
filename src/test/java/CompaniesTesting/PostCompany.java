@@ -1,4 +1,4 @@
-package ApiTesting;
+package CompaniesTesting;
 
 import apiTestingUtils.ApiRequests;
 import apiTestingUtils.CreateBodyContent;
@@ -11,10 +11,10 @@ import java.util.Collection;
 import java.util.Iterator;
 
 
-public class PostUsers {
-    @Test(groups = {"all", "postMethods", "createUser"}, description = "Create Users", dataProvider = "getBodyContent")
-    public void createUser(String bodyContent){
-        String url = "http://localhost:5000/users/add";
+public class PostCompany {
+    @Test(groups = {"all", "postMethods", "createCompany"}, description = "Create Companies", dataProvider = "getBodyContent")
+    public void createCompany(String bodyContent){
+        String url = "http://localhost:5000/companies/add";
         String responseString = ApiRequests.makePost(url, bodyContent).asString();
         JSONObject jsonResponse = new JSONObject(responseString);
         System.out.println(jsonResponse.toString(10));
@@ -24,8 +24,8 @@ public class PostUsers {
     private Iterator<Object[]> getBodyContent(){
         Collection<Object[]> data = new ArrayList<Object[]>();
         for(int i = 0; i < 500; i++){
-            JSONObject newUser = new JSONObject(CreateBodyContent.getBodyContentUsers());
-            data.add(new Object[] {newUser.toString()});
+            JSONObject newCompany = new JSONObject(CreateBodyContent.getBodyContentCompanies());
+            data.add(new Object[] {newCompany.toString()});
         }
         return data.iterator();
     }

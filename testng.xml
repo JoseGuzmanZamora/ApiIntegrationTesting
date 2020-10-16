@@ -6,7 +6,7 @@
     <test name="TestSuite">
         <groups>
             <run>
-                <include name="deleteUsers"></include>
+                <include name="deleteCompanies"></include>
             </run>
         </groups>
 
@@ -14,6 +14,9 @@
             <class name="ApiTesting.GetUsers"></class>
             <class name="ApiTesting.PostUsers"></class>
             <class name="ApiTesting.DeleteUsers"></class>
+            <class name="CompaniesTesting.PostCompany"></class>
+            <class name="CompaniesTesting.GetCompany"></class>
+            <class name="CompaniesTesting.DeleteCompany"></class>
         </classes>
 
     </test>
